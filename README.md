@@ -1,6 +1,8 @@
-# Sparnelanden Containers Sensor for Home Assistant
+# Spaarnelanden Containers Sensor for Home Assistant
 
 A sensor for the capacity status of garbage containers serviced by the Spaarnelanden.
+
+Forked to apply all fixes from https://github.com/mirceadamian for personal use. Feel free to install it as well!
 
 The sensor scrapes container data every 2 hours from
 https://inzameling.spaarnelanden.nl/.  Rather than exposing the status of all waste
