@@ -91,13 +91,14 @@ class ContainerSensor(CoordinatorEntity):
     @callback
     def _handle_coordinator_update(self) -> None:
         container = self.coordinator.data[self.container_id]
-        last_emptied_match = re.search(DATE_RE, container["dtDateLastEmptied"])
-        last_emptied = int(last_emptied_match.group(1)) / 1000
+        #last_emptied_match = re.search(DATE_RE, container["dtDateLastEmptied"])
+        #last_emptied = int(last_emptied_match.group(1)) / 1000
         self.attrs = {
             const.ATTR_OUT_OF_USE: container["bIsOutOfUse"],
             const.ATTR_CAPACITY: container["dFillingDegree"],
             const.ATTR_ID: container["sRegistrationNumber"],
-            const.ATTR_LAST_EMPTIED: datetime.fromtimestamp(last_emptied),
+            const.ATTR_LAST_EMPTIED: container["sDateLastEmptied"],
+            #const.ATTR_LAST_EMPTIED: datetime.fromtimestamp(last_emptied),
             const.ATTR_CONTAINER_TYPE: container["sProductName"],
         }
         self._available = True
