@@ -24,7 +24,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     }
 )
 
-CONTAINER_INFO_RE = r"var oContainerModel =(\[{.*?}\]);"
+CONTAINER_INFO_RE = r"var oContainerModel = (\[{.*?}\]);"
 DATE_RE = r"Date\((.*?)\)"
 
 log = logging.getLogger(__name__)
